@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "hello, you didn't specifed any @recipient"
+echo "hello, you didn't provide any @recipient"
