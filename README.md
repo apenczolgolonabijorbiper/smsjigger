@@ -65,5 +65,5 @@ The script looks for out files in ~/sms/out subfolders and once found it moves t
 
 # ToDo
 
-1. add blacklisting by sender
+1. add blacklisting - generic one and by a recipient
 2. add www interface
