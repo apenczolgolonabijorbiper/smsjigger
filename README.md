@@ -28,6 +28,12 @@ _* * * * * ( ~/sms/run-sms.sh 2>&1 >> ~/sms/log/run-sms.sh-cron.log )_
 4. local user added to smsd group
 5. sticky bit removed from /var/spool/sms/incoming
 
+## Use by SMS:
+
+Users will be sending SMSes to a known mobile phone number in the following format
+
+> `<@recipient> [#command] [parameters]`
+
 ------
 
 ## Scripts
