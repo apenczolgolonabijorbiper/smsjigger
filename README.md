@@ -45,5 +45,17 @@ The raw GSM file is moved to ~/sms/old/gsm folder.
 
 ## exec.sh
 
+Further processing is assumed to be done by dedicated shell script related to the command indicated in SMS.
+If there was no command than it is assumed to be #generic and if related script of @recipient is not found than an error message is send back to the sender.
+
+The script to be executed is expected to be found in ~/sms/cmd/@recipient (or ~/sms/cmd/unknown). 
+
+The script is called in a subshell with two parameters: `<actionscript.sh> <sender> <smsfile>`. The `<smsfile>` contains full path and filename to the content of SMS with file format as idicated above (output of process.sh).
+
+Result (standard output) of execution of the script is stored in a interim file (/tmp/`<sender>`.outinfo.`<timestamp>`) and moved to ~/sms/out/@recipient.
+
+The input file is archived to ~/sms/old/@recipient folder.
 
 ## push.sh
+
+The script looks for out files in ~/sms/out subfolders and once found it moves them to /var/spool/sms/outgoing for further processing by smstools. Then they are archived to ~/sms/old/@recipient folder.
