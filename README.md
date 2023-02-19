@@ -1,6 +1,6 @@
 # smsjigger
 
-*This is a shell-based utensil for processing incoming SMSes and executing actions for defined recipients.*
+**This is a shell-based utensil for processing incoming SMSes and executing actions for defined recipients.**
 
 
 Default working folder: ~/sms
