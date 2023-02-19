@@ -179,6 +179,13 @@ Avilable #commands for any @`<recipient>`:
 
 # ToDo
 
-1. ~~add blacklisting - generic one and by a recipient~~
-2. add www interface
-3. add API interface (REST/SOAP)
+01. ~~add blacklisting - generic one and by a recipient~~
+02. add www interface (browsing own lists from apps)
+03. add API interface (REST/SOAP)
+04. add general command for subscribing and unsubscribing
+05. add general mechanism for broadcasting (pushing to subcribers)
+06. add general command for getting content of a list
+07. add time-based list (with expiration)
+08. add multi-language support (with setting up own/preferred language)
+09. add delayed/scheduled send out
+10. ?
