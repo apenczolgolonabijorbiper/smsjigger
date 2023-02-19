@@ -116,8 +116,8 @@ Used by process.sh, execute.sh and push.sh scripts.
 
 ### cfg
 
-Configurations are kept here.
-Not in use as of now.
+Configurations are kept here. 
+Used by execute.sh and possibly by individual action scripts.
 
 ### www
 
