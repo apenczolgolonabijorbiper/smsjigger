@@ -59,3 +59,8 @@ The input file is archived to ~/sms/old/@recipient folder.
 ## push.sh
 
 The script looks for out files in ~/sms/out subfolders and once found it moves them to /var/spool/sms/outgoing for further processing by smstools. Then they are archived to ~/sms/old/@recipient folder.
+
+# ToDo
+
+1. add blacklisting by sender
+2. add www interface
