@@ -82,6 +82,10 @@ The input file is archived to ~/sms/old/@recipient folder.
 
 The script looks for out files in ~/sms/out subfolders and once found it moves them to /var/spool/sms/outgoing for further processing by smstools. Then they are archived to ~/sms/old/@recipient folder.
 
+### run-sms.sh
+
+Inifinite loop with 3s sleep to run processing pipeline.
+
 ## Folders
 
 ### got
