@@ -8,18 +8,30 @@ for filename in $( find ~/sms/new -type f -not -newermt '-2 seconds' -not -name 
         folder=${dir##*/}
 	file=${filename##*/}
 	IFS="." read -r smsfrom smsaction smstimestamp <<< $file
-	actionscript=$smsaction.sh
-	if [[ -f cmd/$folder/$actionscript ]]; then
-		cmdresult=$(cmd/$folder/$actionscript $smsfrom $filename)
-		mkdir log/$folder/ 2> /dev/null
-		echo "=======`date +%Y%m%d_%H%M%S` === from: $smsfrom, smstext: $file" >> log/$folder/$actionscript.log
-		echo $cmdresult >> log/$folder/$actionscript.log
-		echo "=======" >> log/$folder/$actionscript.log
-		smsinfo="$cmdresult"
-
-	else
-		echo action script does not exists
-		smsinfo="Recipient or command unknown"
+	bancheck=0
+	if [[ -f ~/sms/cfg/$folder/blacklist.lst ]]; then
+		bancheck=$(grep -c $smsfrom ~/sms/cfg/$folder/blacklist.lst)
+		echo bancheck1=$bancheck
+	fi
+	if [[ $bancheck -eq 0 && -f ~/sms/cfg/blacklist.lst ]]; then
+		bancheck=$(grep -c $smsfrom ~/sms/cfg/blacklist.lst)
+		echo bancheck2=$bancheck
+	fi
+	if [[ $bancheck -gt 0 ]]; then
+		smsinfo="You are not allowed to invoke command #$smsaction for recipient @$folder"
+	else	
+		actionscript=$smsaction.sh
+		if [[ -f cmd/$folder/$actionscript ]]; then
+			cmdresult=$(cmd/$folder/$actionscript $smsfrom $filename)
+			mkdir log/$folder/ 2> /dev/null
+			echo "=======`date +%Y%m%d_%H%M%S` === from: $smsfrom, smstext: $file" >> log/$folder/$actionscript.log
+			echo $cmdresult >> log/$folder/$actionscript.log
+			echo "=======" >> log/$folder/$actionscript.log
+			smsinfo="$cmdresult"
+		else
+			echo action script does not exists
+			smsinfo="Recipient or command unknown"
+		fi
 	fi
 	mkdir ~/sms/out/$folder 2> /dev/null
 	tmpfile=/tmp/$smsfrom.outinfo.`/usr/bin/date +%s%N`

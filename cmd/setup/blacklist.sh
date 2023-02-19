@@ -6,17 +6,22 @@ if [[ ! -f ~/sms/cmd/$recipient/generic.sh ]]; then
 else
 	owner=$(<~/sms/cfg/$recipient/owner.cfg)
 	if [[ $1 == $owner ]]; then
-		if [[ ! -f ~/sms/cfg/$recipient/blacklist.lst ]]; then
-			echo "$blocknumber" >> ~/sms/cfg/$recipient/blacklist.lst
-		else
-			check=$(grep -c $blocknumber ~/sms/cfg/$recipient/blacklist.lst)
-			if [[ $check -eq 0 ]]; then
-				timestamp=`date +%s%N`
-				cp ~/sms/cfg/$recipient/blacklist.lst ~/sms/cfg/$recipient/blacklist-old-$timestamp
+		if [[ $owner == $blocknumber ]]; then
+			echo "owner cannot be blacklisted for recipient $recipient"
+		else 
+			if [[ ! -f ~/sms/cfg/$recipient/blacklist.lst ]]; then
 				echo "$blocknumber" >> ~/sms/cfg/$recipient/blacklist.lst
 				echo "number $blocknumber blacklisted for recipient $recipient"
 			else
-				echo "number $blocknumber is already blacklisted for recipient $recipient"
+				check=$(grep -c $blocknumber ~/sms/cfg/$recipient/blacklist.lst)
+				if [[ $check -eq 0 ]]; then
+					timestamp=`date +%s%N`
+					cp ~/sms/cfg/$recipient/blacklist.lst ~/sms/cfg/$recipient/blacklist-old-$timestamp
+					echo "$blocknumber" >> ~/sms/cfg/$recipient/blacklist.lst
+					echo "number $blocknumber blacklisted for recipient $recipient"
+				else
+					echo "number $blocknumber is already blacklisted for recipient $recipient"
+				fi
 			fi
 		fi
 	else
