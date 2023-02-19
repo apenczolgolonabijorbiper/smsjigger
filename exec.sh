@@ -38,5 +38,6 @@ for filename in $( find ~/sms/new -type f -not -newermt '-2 seconds' -not -name 
 	echo "" >> $tmpfile
 	echo "$smsinfo" >> $tmpfile
 	mv $tmpfile ~/sms/out/$folder
+	mkdir ~/sms/old/$folder 2> /dev/null
 	mv $filename ~/sms/old/$folder
 done
