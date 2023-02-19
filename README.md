@@ -172,7 +172,8 @@ Available @setup #commands:
 
 Avilable @`<recipient>` #commands:
 * generic (no #command provided)
-* addme (needs to be installed first)
+* help
+* addme
 
 -------
 
