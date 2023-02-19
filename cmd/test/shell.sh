@@ -7,5 +7,5 @@ if [[ -f $smstext ]]; then
 	cmdresult=$($cmd)
 	echo $cmdresult
 else
-	echo "komenda shell nie znaleziona"
+	echo "shell command not found"
 fi

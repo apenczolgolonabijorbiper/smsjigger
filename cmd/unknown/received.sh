@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "czesc, jak sie masz?"
+echo "hello, you didn't specifed any @recipient"

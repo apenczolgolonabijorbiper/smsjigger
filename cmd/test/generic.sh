@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "wszystko ok, możesz wysłać komendę #"
+echo "ready to accept #command"
