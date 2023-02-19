@@ -124,6 +124,11 @@ Used by execute.sh and possibly by individual action scripts.
 Web interface files are kept here.
 Not in use as of now 
 
+### app
+
+Application data are kept here.
+Used by individual action scripts.
+
 -------
 
 ## Test use
@@ -154,6 +159,11 @@ Send a new SMS "@setup #delete `<recipient>`".
 
 Within 30 second you should get a reply "recipient @`<recipient>` deleted for `<yournumber>`".
 
+Available setup commands:
+* create `<recipient>`
+* delete `<recipient>`
+* blacklist `<recipient>` `<blocknumber>`
+* install `<recipient>` `<command>`
 
 -------
 
