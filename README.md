@@ -120,6 +120,22 @@ Not in use as of now
 
 -------
 
+## Test use
+
+Send a new SMS "ok" to the mobile phone you have connected to the server.
+
+Within 30 seconds you should get a reply "hello, you didn't provide any @recipient"
+
+Send a new SMS "@test ok" to the same mobile phone.
+
+Within 30 seconds you should get a reply "ready to accept #command".
+
+Send a new SMS "@test #shell w".
+
+Within 30 second you should get a reply with result of executing "w" shell command.
+
+-------
+
 # ToDo
 
 1. add blacklisting - generic one and by a recipient
