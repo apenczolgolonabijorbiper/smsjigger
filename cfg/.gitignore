@@ -1,3 +1,4 @@
 !.gitignore
 !blacklist.lst
 !smsd.conf.sample
+*
