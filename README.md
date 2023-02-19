@@ -170,7 +170,7 @@ Available @setup #commands:
 * blacklist `<recipient>` `<blocknumber>`
 * install `<recipient>` `<command>`
 
-Avilable @`<recipient>` #commands:
+Avilable #commands for any @`<recipient>`:
 * generic (no #command provided)
 * help
 * addme
