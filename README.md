@@ -201,5 +201,6 @@ Avilable #commands for any @`<recipient>`:
 16. add statistics
 17. implement shopping-list app
 18. implement reminder app
-19. add ignoring (self-blacklisting for everything)
-20. ?
+19. add ignoring (self-blacklisting for any send-out)
+20. add whitelist for @setup
+21. ?
