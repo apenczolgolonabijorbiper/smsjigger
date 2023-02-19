@@ -1,1 +1,0 @@
-echo "zapisano pomyślnie"
