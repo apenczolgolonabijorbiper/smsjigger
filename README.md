@@ -19,13 +19,15 @@ _* * * * * ( ~/sms/run-sms.sh 2>&1 >> ~/sms/log/run-sms.sh-cron.log )_
 
 ------
 
-## fetch.sh
+## Scripts
+
+### fetch.sh
 It looks for new files in /var/spool/sms/incoming older than 2 seconds (assumed time enough to write down all content by smstools deamon.
 
 Once anything new found they are moved to ~/sms/got folder with the original naming convention (GSM1.<random>)
 
 
-## process.sh
+### process.sh
 
 It looks for new GSM* files in ~/sms/got and once found it starts processing them, in a sense of parsing and creating content
 for further execution.
@@ -46,7 +48,7 @@ is assumed to be #generic command (or #received for unknown recipients).
 
 The raw GSM file is moved to ~/sms/old/gsm folder.
 
-## exec.sh
+### exec.sh
 
 Further processing is assumed to be done by dedicated shell script related to the command indicated in SMS.
 If there was no command than it is assumed to be #generic and if related script of @recipient is not found than an error message is send back to the sender.
@@ -59,9 +61,11 @@ Result (standard output) of execution of the script is stored in a interim file 
 
 The input file is archived to ~/sms/old/@recipient folder.
 
-## push.sh
+### push.sh
 
 The script looks for out files in ~/sms/out subfolders and once found it moves them to /var/spool/sms/outgoing for further processing by smstools. Then they are archived to ~/sms/old/@recipient folder.
+
+-------
 
 # ToDo
 
