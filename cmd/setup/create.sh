@@ -8,5 +8,5 @@ else
 	cp ~/sms/cmd/setup/generic.sh ~/sms/cmd/$recipient
 	mkdir ~/sms/cfg/$recipient
 	echo "$1" > ~/sms/cfg/$recipient/owner.cfg
-	echo "recipient $recipient created for $1"
+	echo "recipient @$recipient created for $1"
 fi
