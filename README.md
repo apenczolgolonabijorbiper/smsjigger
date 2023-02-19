@@ -40,6 +40,7 @@ the new file is created in ~/sms/new/unknown otherwise in ~/sms/new/@recipient. 
 is assumed to be #generic command (or #received for unknown recipients).
 
 > Format of the new file: `<sender>.<command>.<timestamp>`.
+
 The raw GSM file is moved to ~/sms/old/gsm folder.
 
 ## exec.sh
