@@ -140,6 +140,21 @@ Send a new SMS "@test #shell w".
 
 Within 30 second you should get a reply with result of executing "w" shell command.
 
+## Setup use
+
+Send a new SMS "@setup #create `<recipient>`" to the mobile phone you have connected to the server.
+
+Within 30 seconds you should get a reply "recipient `<recipient>` created for `<yournumber>`"
+
+Send a new SMS "@setup #blacklist `<recipient>` `<blocknumber>`" to the same mobile phone.
+
+Within 30 seconds you should get a reply "number `<blocknumber>` blacklisted for recipient @`<recipient>`".
+
+Send a new SMS "@setup #delete `<recipient>`".
+
+Within 30 second you should get a reply "recipient @`<recipient>` deleted for `<yournumber>`".
+
+
 -------
 
 # ToDo
