@@ -65,6 +65,48 @@ The input file is archived to ~/sms/old/@recipient folder.
 
 The script looks for out files in ~/sms/out subfolders and once found it moves them to /var/spool/sms/outgoing for further processing by smstools. Then they are archived to ~/sms/old/@recipient folder.
 
+## Folders
+
+### got
+
+Incoming SMSes are stored here temporarily after pulling from smstools for further processing.
+Used by fetch.sh script.
+
+### new
+
+Received SMSes are stored here for further execution.
+Used by process.sh script.
+
+### out
+
+Outgoing SMSes are stored here for further sending out.
+Used by push.sh script.
+
+### cmd
+
+Repository of shell scripts for executing commands.
+Used by execute.sh script.
+
+### log
+
+Logs are stored here.
+Used by all scripts.
+
+### old
+
+Old SMSes files are stored here.
+Used by process.sh, execute.sh and push.sh scripts.
+
+### cfg
+
+Configurations are kept here.
+Not in use as of now.
+
+### www
+
+Web interface files are kept here.
+Not in use as of now 
+
 -------
 
 # ToDo
