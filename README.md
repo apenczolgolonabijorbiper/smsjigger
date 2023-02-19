@@ -14,7 +14,7 @@ Pushing folder: /var/spool/sms/outgoing
 
 Pipeline of files: incoming (after SMS received) --> got (after fetch) --> new (after process) --> old (after exec) --> outgoing (before SMS sent out)
 
-## Execution (deamon)
+## Execution (daemon)
 
 Put to crontab
 
