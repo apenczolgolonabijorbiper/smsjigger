@@ -122,7 +122,12 @@ Used by execute.sh and possibly by individual action scripts.
 ### www
 
 Web interface files are kept here.
-Not in use as of now 
+Not in use as of now.
+
+### api
+
+API interace is kept here.
+Not in use as of now.
 
 ### app
 
@@ -175,3 +180,4 @@ Avilable @`<recipient>` #commands:
 
 1. add blacklisting - generic one and by a recipient
 2. add www interface
+3. add API interface (REST/SOAP)
