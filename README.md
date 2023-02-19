@@ -2,6 +2,7 @@
 
 **This is a shell-based utensil for processing incoming SMSes, executing actions for defined recipients and sending out replies via SMS to senders.**
 
+## General information
 
 Default working folder: ~/sms
 
@@ -13,9 +14,18 @@ Pushing folder: /var/spool/sms/outgoing
 
 Pipeline of files: incoming (after SMS received) --> got (after fetch) --> new (after process) --> old (after exec) --> outgoing (before SMS sent out)
 
+## Execution (deamon)
+
 Put to crontab
 
 _* * * * * ( ~/sms/run-sms.sh 2>&1 >> ~/sms/log/run-sms.sh-cron.log )_
+
+## Prerequisites
+
+1. smstools installed and mobile phone connected to the server
+2. git repository cloned to local ~/sms folder
+3. local user added to smsd group
+4. sticky bit removed from /var/spool/sms/incoming
 
 ------
 
