@@ -19,7 +19,7 @@ for filename in $( find ~/sms/new -type f -not -newermt '-2 seconds' -not -name 
 
 	else
 		echo action script does not exists
-		smsinfo="Komenda nieznana"
+		smsinfo="Recipient or command unknown"
 	fi
 	mkdir ~/sms/out/$folder 2> /dev/null
 	tmpfile=/tmp/$smsfrom.outinfo.`/usr/bin/date +%s%N`
