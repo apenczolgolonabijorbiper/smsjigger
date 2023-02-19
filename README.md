@@ -159,11 +159,15 @@ Send a new SMS "@setup #delete `<recipient>`".
 
 Within 30 second you should get a reply "recipient @`<recipient>` deleted for `<yournumber>`".
 
-Available setup commands:
+Available @setup #commands:
 * create `<recipient>`
 * delete `<recipient>`
 * blacklist `<recipient>` `<blocknumber>`
 * install `<recipient>` `<command>`
+
+Avilable @<recipient> #commands:
+* generic (no #command provided)
+* addme (needs to be installed first)
 
 -------
 
