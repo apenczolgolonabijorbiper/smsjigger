@@ -2,11 +2,13 @@
 
 Default working folder: ~/sms
 
-Pipeline: fetch.sh --> process.sh --> exec.sh --> push.sh
+Pipeline of commands: fetch.sh --> process.sh --> exec.sh --> push.sh
 
 Fetching folder: /var/spool/sms/incoming
 
 Pushing folder: /var/spool/sms/outgoing
+
+Pipeline of files: incoming (after SMS received) --> got (after fetch) --> new (after process) --> old (after exec) --> outgoing (before SMS sent out)
 
 Put to crontab
 
