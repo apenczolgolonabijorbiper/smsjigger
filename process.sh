@@ -2,18 +2,15 @@
 
 cd ~/sms
 
-#for filename in $( find ~/sms/got -type f -mmin +1 ); do
 for filename in $( find ~/sms/got -name "GSM*" -type f -not -newermt '-2 seconds' ); do
 	echo reading file $filename
 	i=1
 	istext=""
 	smstext=""
 	while IFS= read line || [ -n "$line" ]; do
-		#echo line $i: $line	
 		[ -z "$line" ] && continue
 		if [[ -z $istext ]]; then
 			IFS=":" read -r linekey linevalue <<< $line
-			#echo linekey=$linekey
 			if [[ $linekey == "From" ]]; then
 				IFS=": " read -r linekey linevalue <<< $line
 				smsfrom=$linevalue
@@ -26,7 +23,6 @@ for filename in $( find ~/sms/got -name "GSM*" -type f -not -newermt '-2 seconds
 				istext=yes
 			fi
 		else
-			#echo line=$line
 			smstext=$smstext$line
 		fi
 		i=$((i+1))
