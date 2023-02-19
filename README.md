@@ -22,10 +22,11 @@ _* * * * * ( ~/sms/run-sms.sh 2>&1 >> ~/sms/log/run-sms.sh-cron.log )_
 
 ## Prerequisites
 
-1. smstools installed and mobile phone connected to the server
-2. git repository cloned to local ~/sms folder
-3. local user added to smsd group
-4. sticky bit removed from /var/spool/sms/incoming
+1. smstools installed (Ubuntu: `sudo apt install smstools` or source code http://smstools3.kekekasvi.com/index.php?p=packages)
+2. mobile phone connected to the server via USB cable
+3. git repository cloned to local ~/sms folder
+4. local user added to smsd group
+5. sticky bit removed from /var/spool/sms/incoming
 
 ------
 
