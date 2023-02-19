@@ -165,7 +165,7 @@ Available @setup #commands:
 * blacklist `<recipient>` `<blocknumber>`
 * install `<recipient>` `<command>`
 
-Avilable @<recipient> #commands:
+Avilable @`<recipient>` #commands:
 * generic (no #command provided)
 * addme (needs to be installed first)
 
