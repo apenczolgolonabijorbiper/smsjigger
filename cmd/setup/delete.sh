@@ -12,6 +12,7 @@ else
 		mv ~/sms/new/$recipient ~/sms/new/$recipient-deleted-$timestamp
 		mv ~/sms/old/$recipient ~/sms/old/$recipient-deleted-$timestamp
 		mv ~/sms/log/$recipient ~/sms/log/$recipient-deleted-$timestamp
+		mv ~/sms/app/$recipient ~/sms/app/$recipient-deleted-$timestamp
 		echo "$1" > ~/sms/cfg/$recipient/owner.cfg
 		echo "recipient @$recipient deleted for $1"
 	else
