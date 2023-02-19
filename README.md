@@ -188,4 +188,8 @@ Avilable #commands for any @`<recipient>`:
 07. add time-based list (with expiration)
 08. add multi-language support (with setting up own/preferred language)
 09. add delayed/scheduled send out
-10. ?
+10. add support for own/configurable root folder
+11. add archiving mechanism
+12. add shortcodes (alias for @+#)
+13. improve error-handling
+14. ?
