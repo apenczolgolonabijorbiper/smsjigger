@@ -192,4 +192,10 @@ Avilable #commands for any @`<recipient>`:
 11. add archiving mechanism
 12. add shortcodes (alias for @+#)
 13. improve error-handling
-14. ?
+14. add tracker & logger
+15. implement forwarder app
+16. add statistics
+17. implement shopping-list app
+18. implement reminder app
+19. add ignoring (self-blacklisting for everything)
+20. ?
