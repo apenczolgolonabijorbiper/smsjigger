@@ -179,6 +179,6 @@ Avilable #commands for any @`<recipient>`:
 
 # ToDo
 
-1. add blacklisting - generic one and by a recipient
+1. ~~add blacklisting - generic one and by a recipient~~
 2. add www interface
 3. add API interface (REST/SOAP)
