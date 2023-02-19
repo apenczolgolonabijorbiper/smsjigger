@@ -14,4 +14,4 @@ Put to crontab
 
 _* * * * * ( ~/sms/run-sms.sh 2>&1 >> ~/sms/log/run-sms.sh-cron.log )_
 
-----
+-----
