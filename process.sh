@@ -14,6 +14,7 @@ for filename in $( find ~/sms/got -name "GSM*" -type f -not -newermt '-2 seconds
 			if [[ $linekey == "From" ]]; then
 				IFS=": " read -r linekey linevalue <<< $line
 				smsfrom=$linevalue
+				smsfrom=${smsfrom/ /}
 			fi
 			if [[ $linekey == "Sent" ]]; then
 				IFS=": " read -r linekey linevalue <<< $line
