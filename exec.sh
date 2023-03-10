@@ -48,7 +48,8 @@ for filename in $( find ~/sms/new -type f -not -newermt '-2 seconds' -not -name 
 			tmpfile=/tmp/$owner.outinfo.`/usr/bin/date +%s%N`
 			echo "To: $owner" > $tmpfile
 			echo "" >> $tmpfile
-			echo "Received SMS from $smsfrom [$filename]" >> $tmpfile
+			smscontent=$(<$filename)
+			echo "Received SMS from $smsfrom [$smscontent]" >> $tmpfile
 			mv $tmpfile ~/sms/out/$folder
 		fi
 	fi
