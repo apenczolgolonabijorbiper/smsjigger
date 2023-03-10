@@ -42,16 +42,12 @@ for filename in $( find ~/sms/new -type f -not -newermt '-2 seconds' -not -name 
 		mv $tmpfile ~/sms/out/$folder
 	else
 		echo "sender $smsfrom not a mobile number, cannot reply"
-	        owner=$(<~/sms/cfg/$folder/owner.cfg)
-        	if [[ ! -z $owner ]]; then
-			mkdir ~/sms/out/$folder 2> /dev/null
-			tmpfile=/tmp/$owner.outinfo.`/usr/bin/date +%s%N`
-			echo "To: $owner" > $tmpfile
-			echo "" >> $tmpfile
+	        if [[ -f ~/sms/cfg/$folder/notify.cfg ]]; then
+       	        	notify=$(<~/sms/cfg/$folder/notify.cfg)
+                	timestamp=$(/usr/bin/date +%s%N)
 			smscontent=$(<$filename)
-			echo "Received SMS from $smsfrom [$smscontent]" >> $tmpfile
-			mv $tmpfile ~/sms/out/$folder
-		fi
+                	echo "sender $smsfrom not a mobile number, cannot reply" > new/$folder/$notify.info.$timestamp
+        	fi
 	fi
 	mkdir ~/sms/old/$folder 2> /dev/null
 	mv $filename ~/sms/old/$folder

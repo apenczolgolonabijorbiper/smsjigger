@@ -8,6 +8,7 @@ else
 	if [[ $1 == $owner ]]; then
 		if [[ ! -f ~/sms/cfg/$recipient/forward.cfg ]]; then
 			echo "$forwardnumber" >> ~/sms/cfg/$recipient/forward.cfg
+			echo "number $forwardnumber added as forward for recipient $recipient"
 		else
 			check=$(grep -c $forwardnumber ~/sms/cfg/$recipient/forward.cfg)
 			if [[ $check -eq 0 ]]; then
