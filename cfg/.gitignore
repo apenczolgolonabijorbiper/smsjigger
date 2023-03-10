@@ -2,4 +2,5 @@
 !blacklist.lst
 !smsd.conf.sample
 !setup
+!unknown
 *
