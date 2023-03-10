@@ -69,6 +69,7 @@ The raw GSM file is moved to ~/sms/old/gsm folder.
 
 Further processing is assumed to be done by dedicated shell script related to the command indicated in SMS.
 If there was no command than it is assumed to be #generic and if related script of @recipient is not found than an error message is send back to the sender.
+If sender is not a valid mobile number there will be an SMS send to owner of this tool (configured as ~/sms/cfg/unknown/owner.cfg).
 
 The script to be executed is expected to be found in ~/sms/cmd/@recipient (or ~/sms/cmd/unknown). 
 
