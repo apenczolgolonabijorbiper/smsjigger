@@ -33,12 +33,25 @@ for filename in $( find ~/sms/new -type f -not -newermt '-2 seconds' -not -name 
 			smsinfo="Recipient or command unknown"
 		fi
 	fi
-	mkdir ~/sms/out/$folder 2> /dev/null
-	tmpfile=/tmp/$smsfrom.outinfo.`/usr/bin/date +%s%N`
-	echo "To: $smsfrom" > $tmpfile
-	echo "" >> $tmpfile
-	echo "$smsinfo" >> $tmpfile
-	mv $tmpfile ~/sms/out/$folder
+	if [[ $smsfrom =~ ^[0-9]+$ ]]; then 
+		mkdir ~/sms/out/$folder 2> /dev/null
+		tmpfile=/tmp/$smsfrom.outinfo.`/usr/bin/date +%s%N`
+		echo "To: $smsfrom" > $tmpfile
+		echo "" >> $tmpfile
+		echo "$smsinfo" >> $tmpfile
+		mv $tmpfile ~/sms/out/$folder
+	else
+		echo "sender $smsfrom not a mobile number, cannot reply"
+	        owner=$(<~/sms/cfg/$folder/owner.cfg)
+        	if [[ ! -z $owner ]]; then
+			mkdir ~/sms/out/$folder 2> /dev/null
+			tmpfile=/tmp/$owner.outinfo.`/usr/bin/date +%s%N`
+			echo "To: $owner" > $tmpfile
+			echo "" >> $tmpfile
+			echo "Received SMS from $smsfrom [$filename]" >> $tmpfile
+			mv $tmpfile ~/sms/out/$folder
+		fi
+	fi
 	mkdir ~/sms/old/$folder 2> /dev/null
 	mv $filename ~/sms/old/$folder
 done
