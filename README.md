@@ -204,5 +204,5 @@ Avilable #commands for any @`<recipient>`:
 18. implement reminder app
 19. add ignoring (self-blacklisting for any send-out)
 20. add whitelist for @setup
-21. add notificantion
+21. ~~add notificantiona~~
 22. ?
