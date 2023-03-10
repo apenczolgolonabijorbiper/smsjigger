@@ -174,11 +174,14 @@ Available @setup #commands:
 * delete `<recipient>`
 * blacklist `<recipient>` `<blocknumber>`
 * install `<recipient>` `<command>`
+* notify `<recipient>` `<number>`
+* notifystop `<recipient>` `<number>`
 
 Avilable #commands for any @`<recipient>`:
 * generic (no #command provided)
-* help
-* addme
+* help <-- returns available commands
+* addme `<list>` <-- adds sender to specified list
+* info `<content_to_send_back>` <-- returns provided content 
 
 -------
 
