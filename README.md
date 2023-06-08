@@ -41,12 +41,12 @@ Users will be sending SMSes to a known mobile phone number in the following form
 ### fetch.sh
 It looks for new files in /var/spool/sms/incoming older than 2 seconds (assumed time enough to write down all content by smstools deamon.
 
-Once anything new found they are moved to ~/sms/got folder with the original naming convention (GSM1.<random>)
+Once anything new found they are moved to ~/sms/got folder with the original naming convention (GSM?.<random> or USB?.<random>)
 
 
 ### process.sh
 
-It looks for new GSM* files in ~/sms/got and once found it starts processing them, in a sense of parsing and creating content
+It looks for new GSM* or USB* (referred further commonly as GSM) files in ~/sms/got and once found it starts processing them, in a sense of parsing and creating content
 for further execution.
 
 At first it goes through file and reads every line. There are specific keywords expected:
