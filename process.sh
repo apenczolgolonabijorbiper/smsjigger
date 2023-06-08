@@ -2,7 +2,7 @@
 
 cd ~/sms
 
-for filename in $( find ~/sms/got -name "GSM*" -type f -not -newermt '-2 seconds' ); do
+for filename in $( find ~/sms/got -name "GSM*" -o -name "USB*" -type f -not -newermt '-2 seconds' ); do
 	echo reading file $filename
 	i=1
 	istext=""
@@ -43,7 +43,7 @@ for filename in $( find ~/sms/got -name "GSM*" -type f -not -newermt '-2 seconds
 		smsaction=received
 		smstext2=$smstext
 	fi
-	if [[ -f ~/sms/cfg/$smsto/notify.cfg ]]; then
+	if [[ -s ~/sms/cfg/$smsto/notify.cfg ]]; then
 		notify=$(<~/sms/cfg/$smsto/notify.cfg)
 		timestamp=$(/usr/bin/date +%s%N)
 		echo "received SMS from $smsfrom for @$smsto with content [$smstext2]" > new/$smsto/$notify.info.$timestamp
