@@ -41,13 +41,14 @@ for filename in $( find ~/sms/new -type f -not -newermt '-2 seconds' -not -name 
 		echo "$smsinfo" >> $tmpfile
 		mv $tmpfile ~/sms/out/$folder
 	elif [[ -z $smsfrom ]]; then
-		echo "sender *smsfrom* in *filename* empty"
+		echo "ERROR: sender *smsfrom* in *filename* empty"
 	else
 		echo "sender $smsfrom in $filename not a mobile number, cannot reply"
-	        if [[ -f ~/sms/cfg/$folder/notify.cfg ]]; then
+	        if [[ -s ~/sms/cfg/$folder/notify.cfg ]]; then
        	        	notify=$(<~/sms/cfg/$folder/notify.cfg)
                 	timestamp=$(/usr/bin/date +%s%N)
 			smscontent=$(<$filename)
+			echo "notifying $notify about this SMS from $smsfrom"
                 	echo "sender $smsfrom not a mobile number, cannot reply" > new/$folder/$notify.info.$timestamp
         	fi
 	fi

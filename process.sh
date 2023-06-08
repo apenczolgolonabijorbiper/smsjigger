@@ -46,6 +46,7 @@ for filename in $( find ~/sms/got -name "GSM*" -o -name "USB*" -type f -not -new
 	if [[ -s ~/sms/cfg/$smsto/notify.cfg ]]; then
 		notify=$(<~/sms/cfg/$smsto/notify.cfg)
 		timestamp=$(/usr/bin/date +%s%N)
+		echo "notifying $notify about this SMS from $smsfrom for @$smsto"
 		echo "received SMS from $smsfrom for @$smsto with content [$smstext2]" > new/$smsto/$notify.info.$timestamp
 	fi
 	timestamp=$(/usr/bin/date +%s%N)
